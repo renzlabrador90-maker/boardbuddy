@@ -1,5 +1,5 @@
 
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../context/useAuth";
 import DashboardCard from "../components/DashboardCard";
 
 const money = (n) =>

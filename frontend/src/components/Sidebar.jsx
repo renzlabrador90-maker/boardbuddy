@@ -3,7 +3,7 @@ import {
   LayoutDashboard, DoorOpen, Users, Receipt, Wallet,
   Wrench, Megaphone, UserRound, LogOut, Building2, X,
 } from "lucide-react";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../context/useAuth";
 
 const both = ["landlord", "tenant"];
 

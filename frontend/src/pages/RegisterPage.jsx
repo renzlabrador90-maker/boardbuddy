@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { Building2 } from "lucide-react";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../context/useAuth";
+import GoogleButton from "../components/GoogleButton";
 
 export default function RegisterPage() {
-  const { user, register } = useAuth();
+  const { user, register, googleSignIn } = useAuth();
   const navigate = useNavigate();
   const [form, setForm] = useState({
     full_name: "", email: "", password: "", confirm: "", role: "tenant",
@@ -40,6 +41,19 @@ export default function RegisterPage() {
         password: form.password,
         role: form.role,
       });
+      navigate("/dashboard");
+    } catch (err) {
+      setError(err.response?.data?.message || err.message);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function handleGoogle(credential) {
+    setError("");
+    setLoading(true);
+    try {
+      await googleSignIn(credential, form.role);
       navigate("/dashboard");
     } catch (err) {
       setError(err.response?.data?.message || err.message);
@@ -94,6 +108,8 @@ export default function RegisterPage() {
             {loading ? "Creating account..." : "Register"}
           </button>
         </form>
+
+        <GoogleButton onCredential={handleGoogle} />
 
         <p className="mt-5 text-center text-sm text-gray-600">
           Already have an account?{" "}
