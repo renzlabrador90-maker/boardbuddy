@@ -4,7 +4,7 @@ A web-based boarding house tenant and rent management system in development.
 
 ## Current state
 
-The React frontend has a responsive navigation layout, mock registration and login, role-based page navigation, and a sample dashboard. The backend and MySQL integration are not implemented yet. Do not use the mock accounts for real tenant data.
+The React frontend has a responsive navigation layout, mock registration and login, role-based page navigation, and a sample dashboard. A basic Express server exposes a health endpoint; authentication, application APIs, and MySQL integration are not implemented yet. Do not use the mock accounts for real tenant data.
 
 ## Objectives
 
@@ -13,14 +13,14 @@ BoardBuddy is planned to support landlord and tenant authentication, rooms, tena
 ## Technology
 
 - Frontend: React, Vite, Tailwind CSS, Axios, React Router, Lucide React
-- Planned backend: Node.js, Express, MySQL2, CORS, dotenv, bcrypt, JWT, nodemon
+- Backend dependencies: Node.js, Express, MySQL2, CORS, dotenv, bcrypt, JWT, nodemon
 - Planned database: MySQL
 
 ## Project structure
 
 - `frontend/`: current React application
-- `backend/`: dependency lockfile and empty backend placeholders
-- `backend/database/schema.sql`: empty placeholder; database schema is not available in this checkout
+- `backend/`: Express health endpoint, dependency files, and empty route placeholders
+- `backend/database/schema.sql`: empty placeholder; database schema has not been created yet
 
 ## Run the current frontend
 
@@ -30,9 +30,11 @@ BoardBuddy is planned to support landlord and tenant authentication, rooms, tena
 
 The current frontend uses local browser storage for demonstration accounts. `frontend/src/services/api.js` sets `USE_MOCK = true`. It does not connect to MySQL or a running API.
 
-## Backend and database setup
+## Run the backend foundation
 
-Backend setup and database creation instructions will be added when the existing design and schema are confirmed. The current `backend/package.json` is incomplete, `backend/database/schema.sql` is empty, and there is no server entry point. `backend/.env.example` lists placeholder environment variable names for future setup. No database credentials or real tenant records belong in Git.
+Run `cd backend` and `npm run dev`. Open `http://localhost:5000/api/health`; it should return `{"status":"ok","service":"BoardBuddy API"}`. The dependencies are already installed in this workspace. On another computer, run `npm ci` first.
+
+The health endpoint does not need a database or environment file. For future configuration, copy `backend/.env.example` to `backend/.env` and fill in local values. Keep `.env` out of Git. MySQL setup instructions will be added when the schema is created. No database credentials or real tenant records belong in Git.
 
 ## Available functionality
 
