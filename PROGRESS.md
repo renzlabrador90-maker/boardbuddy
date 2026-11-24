@@ -7,10 +7,10 @@ Updated: 2026-11-25
 - Frontend scaffold and responsive navigation are present.
 - Mock registration, login, logout, client-side role routing, and sample dashboards are implemented.
 - `npm run build` in `frontend/` passed on 2026-11-25.
+- Initial local commits `1f61e6e` and `f508d51` were pushed to the public GitHub repository and verified on 2026-11-25.
 
 ## In development
 
-- Private GitHub repository creation, remote connection, and push.
 - Backend design and database schema confirmation.
 
 ## Remaining
@@ -23,7 +23,6 @@ Updated: 2026-11-25
 ## Known issues
 
 - The linked previous conversation could not be read by the available web tool; historical decisions are unverified.
-- The root folder had no Git repository at inspection time.
 - `backend/package.json` contains only a scripts fragment, and backend source and schema files are empty. There is no `server.js`.
 - The frontend still uses mock accounts in local storage, including plaintext demo passwords. It must not be used with real data.
 - Dashboard figures are fixed sample values. Other module pages are placeholders.
@@ -32,7 +31,7 @@ Updated: 2026-11-25
 
 ## Latest milestone
 
-Repository audit and frontend build verification. A safe initial local Git checkpoint was committed as `1f61e6e`; the private GitHub repository and push are pending.
+Repository audit, frontend build verification, and GitHub checkpoint. The initial commits are available at `renzlabrador90-maker/boardbuddy` on `main`. The user chose to keep the repository public.
 
 ## Next development step
 
