@@ -10,7 +10,7 @@ Updated: 2026-11-25
 
 ## In development
 
-- GitHub checkpoint and repository connection.
+- Private GitHub repository creation, remote connection, and push.
 - Backend design and database schema confirmation.
 
 ## Remaining
@@ -32,7 +32,7 @@ Updated: 2026-11-25
 
 ## Latest milestone
 
-Repository audit and frontend build verification. A safe initial Git checkpoint is being prepared.
+Repository audit and frontend build verification. A safe initial local Git checkpoint was committed as `1f61e6e`; the private GitHub repository and push are pending.
 
 ## Next development step
 
